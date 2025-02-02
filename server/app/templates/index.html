@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <title>GMI Weather Server - {{title}}</title>
+    <head>
+    <body>
+        {% if title %}
+        <h1>GMI Weather Server - {{title}}</title>
+        {% else %}
+        <h1>Welcome to the GMI Weather Server</h1>
+        {% endif %}
+        <h2>Hello, {{user.username}}</h2>
+        <para>Recent weather data from GMI:</para>
+        <table>
+            <tr>
+                <th>DateTime</th>
+                <th>Temp (C)</th>
+                <th>Temp (F)</th>
+            </tr>
+            {% for record in weather_data%}
+            <tr>
+                <td>{{record.date_time}}</td>
+                <td>{{record.TempC}}</td>
+                <td>{{record.TempF}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

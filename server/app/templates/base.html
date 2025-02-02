@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        {% if title %}
+        <title>GMI Weather Server - {{ title }}</title>
+        {% else %}
+        <title>Welcome to the GMI Weather Server!</title>
+        {% endif %}
+    </head>
+    <body>
+        <dev>Weather Server: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
